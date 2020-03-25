@@ -52,6 +52,7 @@ export default class Process extends Component {
       title: "1st",
       content: (
         <motion.div
+          key={"One"}
           initial={{ opacity: 0, x: "50vh" }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: "-30vw" }}
@@ -74,6 +75,7 @@ export default class Process extends Component {
       title: "2nd",
       content: (
         <motion.div
+          key={"Two"}
           initial={{ opacity: 0, x: "50vw" }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: "-50vw" }}
@@ -96,6 +98,7 @@ export default class Process extends Component {
       title: "3rd",
       content: (
         <motion.div
+          key={"Three"}
           initial={{ opacity: 0, x: "-50vw" }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: "50vw" }}
@@ -118,6 +121,7 @@ export default class Process extends Component {
       title: "4th",
       content: (
         <motion.div
+          key={"Four"}
           initial={{ opacity: 0, x: "-50vw" }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: "50vw" }}
@@ -140,6 +144,7 @@ export default class Process extends Component {
       title: "5th",
       content: (
         <motion.div
+          key={"Five"}
           initial={{ opacity: 0, x: "-50vw" }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: "50vw" }}
@@ -162,6 +167,7 @@ export default class Process extends Component {
       title: "6th",
       content: (
         <motion.div
+          key={"Six"}
           initial={{ opacity: 0, x: "-50vw" }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: "50vw" }}
@@ -185,6 +191,7 @@ export default class Process extends Component {
       content: (
         <div>
           <motion.div
+            key={"Seven"}
             initial={{ opacity: 0, x: "-50vw" }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "50vw" }}
@@ -205,9 +212,10 @@ export default class Process extends Component {
       ),
     },
     {
-      title: "9th",
+      title: "8th",
       content: (
         <motion.div
+          key={"Eight"}
           initial={{ opacity: 0, x: "-50vw" }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: "50vw" }}
@@ -227,6 +235,7 @@ export default class Process extends Component {
       title: null,
       content: (
         <motion.div
+          key={"Nine"}
           initial={{ opacity: 0, x: "-50vw" }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: "50vw" }}
