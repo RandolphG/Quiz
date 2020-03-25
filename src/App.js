@@ -14,15 +14,48 @@ class App extends Component {
     this.state = {
       wrong: 0,
       correct: 0,
-      status: "",
+      tries: 0,
+      completed: false,
+      userData: {
+        correct: { type: "CORRECT", value: null },
+        wrong: { type: "WRONG", value: null },
+        tries: { type: "TRIES", value: null },
+      },
+      newData: [],
     };
+    this.updateUserData();
   }
+
+  /**
+   * update user data for charts
+   */
+  updateUserData = () => {
+    const correct = this.state.correct;
+    const wrong = this.state.wrong;
+    const tries = this.state.tries;
+
+    let userData = { ...this.state.userData };
+    userData.correct.value = correct;
+    userData.wrong.value = wrong;
+    userData.tries.value = tries;
+
+    this.setState({ userData: userData, newData: Object.values(userData) });
+    console.log(Object.values(this.state.newData));
+  };
+
+  /**
+   * add completed tries
+   */
+  addTries = () => {
+    const tries = this.state.tries + 1;
+    this.setState({ tries: tries, completed: true });
+  };
 
   /**
    *
    */
   resetCount = () => {
-    this.setState({ wrong: 0, correct: 0 });
+    this.setState({ wrong: 0, correct: 0, completed: false });
   };
 
   /**
@@ -31,7 +64,7 @@ class App extends Component {
   addWrong = () => {
     console.log("add to wrong");
     const addValue = this.state.wrong + 1;
-    this.setState({ wrong: addValue, status: "error" });
+    this.setState({ wrong: addValue });
   };
 
   /**
@@ -40,21 +73,25 @@ class App extends Component {
   addCorrect = () => {
     console.log("add to correct");
     const addValue = this.state.correct + 1;
-    this.setState({ correct: addValue, status: "finish" });
+    this.setState({ correct: addValue });
   };
 
   render() {
     return (
       <Layout>
         <PrimarySearchAppBar
+          tries={this.state.tries}
           wrong={this.state.wrong}
           correct={this.state.correct}
         />
         <Process
-          status={this.state.status}
+          newData={this.state.newData}
+          completed={this.state.completed}
           resetCount={this.resetCount}
           addWrong={this.addWrong}
           addCorrect={this.addCorrect}
+          addTries={this.addTries}
+          updateUserData={this.updateUserData}
         />
         <BottomAppBar />
       </Layout>

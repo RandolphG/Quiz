@@ -15,7 +15,8 @@ import MailIcon from "@material-ui/icons/Mail";
 import DoneOutlineIcon from "@material-ui/icons/DoneOutline";
 import CloseTwoToneIcon from "@material-ui/icons/CloseTwoTone";
 import BarChartIcon from "@material-ui/icons/BarChart";
-
+import AlarmOnIcon from "@material-ui/icons/AlarmOn";
+import { green, orange, amber } from "@material-ui/core/colors";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& > *": {
@@ -191,8 +192,14 @@ export default function PrimarySearchAppBar(props) {
           <div className={classes.grow} />
 
           <IconButton color="inherit">
+            <Badge badgeContent={props.tries} color="error" showZero={true}>
+              <AlarmOnIcon style={{ color: amber[400] }} />
+            </Badge>
+          </IconButton>
+
+          <IconButton color="inherit">
             <Badge badgeContent={props.wrong} color="error" showZero={true}>
-              <CloseTwoToneIcon />
+              <CloseTwoToneIcon style={{ color: orange[500] }} />
             </Badge>
           </IconButton>
 
@@ -202,7 +209,7 @@ export default function PrimarySearchAppBar(props) {
               color="secondary"
               showZero={true}
             >
-              <DoneOutlineIcon />
+              <DoneOutlineIcon style={{ color: green[500] }} />
             </Badge>
           </IconButton>
 

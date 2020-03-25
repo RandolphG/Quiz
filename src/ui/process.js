@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import "antd/dist/antd.css";
 import "../index.css";
-import { Result, Steps, Button, message, Row } from "antd";
+import { Result, Steps, Button, message } from "antd";
 import { Checkbox } from "antd";
 import { AnimatePresence, motion } from "framer-motion";
-import { Row as BootstrapRow } from "react-bootstrap";
 import {
+  CrownTwoTone,
   LayoutTwoTone,
   ProfileTwoTone,
   SettingTwoTone,
@@ -14,6 +14,7 @@ import {
   ExperimentTwoTone,
   ApiTwoTone,
 } from "@ant-design/icons";
+import Data from "./chart";
 
 const { Step } = Steps;
 
@@ -204,7 +205,7 @@ export default class Process extends Component {
       ),
     },
     {
-      title: "Done",
+      title: "9th",
       content: (
         <motion.div
           initial={{ opacity: 0, x: "-50vw" }}
@@ -217,6 +218,23 @@ export default class Process extends Component {
               title="Successfully Completed Short Quiz"
               subTitle="User stats: takes 1-5 minutes, please wait."
               extra={[]}
+            />
+          </div>
+        </motion.div>
+      ),
+    },
+    {
+      title: null,
+      content: (
+        <motion.div
+          initial={{ opacity: 0, x: "-50vw" }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: "50vw" }}
+        >
+          <div style={{ textAlign: "center" }}>
+            <Result
+              icon={<CrownTwoTone style={{ fontSize: 40 }} />}
+              extra={[<Data userData={this.props.newData} />]}
             />
           </div>
         </motion.div>
@@ -237,9 +255,9 @@ export default class Process extends Component {
   }
 
   /**
-   * TODO
+   * check answered value and move to next question
    *
-   * @param {TODO} checkedValues
+   * @param  checkedValues
    * @param index
    */
   onChange(checkedValues, index) {
@@ -256,8 +274,9 @@ export default class Process extends Component {
         " is wrong ",
         answers[answerIndex]
       );
-      this.props.addWrong();
       message.warn("wrong!");
+      this.props.addWrong();
+      this.next();
     }
   }
 
@@ -274,7 +293,24 @@ export default class Process extends Component {
    * TODO
    */
   next() {
+    console.log(
+      `current index`,
+      this.state.current,
+      `of `,
+      this.process.length - 3,
+      ` | test completed : `,
+      this.props.completed
+    );
+    this.props.updateUserData();
     const current = this.state.current + 1;
+
+    if (this.props.completed === true) {
+      this.setState({ current });
+      return;
+    }
+    if (this.state.current >= this.process.length - 3) {
+      this.props.addTries();
+    }
     this.setState({ current });
   }
 
@@ -285,6 +321,11 @@ export default class Process extends Component {
     const current = this.state.current - 1;
     this.setState({ current });
   }
+
+  /**
+   * TODO
+   */
+  componentDidMount() {}
 
   /**
    * renders Steps content
@@ -302,21 +343,10 @@ export default class Process extends Component {
 
         <AnimatePresence exitBeforeEnter>
           <div className="steps-content">{this.process[current].content}</div>
+          <div id={"chart"} />
         </AnimatePresence>
 
         <div className={"steps-action"}>
-          {current > 0 && current < 7 && (
-            <motion.div
-              style={{ display: "table-cell" }}
-              initial={{ opacity: 0, x: "-50vw" }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: "50vw" }}
-            >
-              <Button style={{ margin: 8 }} onClick={() => this.prev()}>
-                Previous
-              </Button>
-            </motion.div>
-          )}
           {current < this.process.length - 1 && (
             <motion.div
               style={{ display: "table-cell" }}
