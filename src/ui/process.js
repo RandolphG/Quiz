@@ -76,9 +76,9 @@ export default class Process extends Component {
       content: (
         <motion.div
           key={"Two"}
-          initial={{ opacity: 0, x: "50vw" }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: "-50vw" }}
+          initial={{opacity: 0, x: "50vh"}}
+          animate={{opacity: 1, x: 0}}
+          exit={{opacity: 0, x: "-30vw"}}
         >
           <Result
             icon={<ExperimentTwoTone />}
@@ -99,9 +99,9 @@ export default class Process extends Component {
       content: (
         <motion.div
           key={"Three"}
-          initial={{ opacity: 0, x: "-50vw" }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: "50vw" }}
+          initial={{opacity: 0, x: "50vh"}}
+          animate={{opacity: 1, x: 0}}
+          exit={{opacity: 0, x: "-30vw"}}
         >
           <Result
             icon={<BuildTwoTone />}
@@ -122,9 +122,9 @@ export default class Process extends Component {
       content: (
         <motion.div
           key={"Four"}
-          initial={{ opacity: 0, x: "-50vw" }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: "50vw" }}
+          initial={{opacity: 0, x: "50vh"}}
+          animate={{opacity: 1, x: 0}}
+          exit={{opacity: 0, x: "-30vw"}}
         >
           <Result
             icon={<SettingTwoTone />}
@@ -145,9 +145,9 @@ export default class Process extends Component {
       content: (
         <motion.div
           key={"Five"}
-          initial={{ opacity: 0, x: "-50vw" }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: "50vw" }}
+          initial={{opacity: 0, x: "50vh"}}
+          animate={{opacity: 1, x: 0}}
+          exit={{opacity: 0, x: "-30vw"}}
         >
           <Result
             icon={<ProfileTwoTone />}
@@ -168,9 +168,9 @@ export default class Process extends Component {
       content: (
         <motion.div
           key={"Six"}
-          initial={{ opacity: 0, x: "-50vw" }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: "50vw" }}
+          initial={{opacity: 0, x: "50vh"}}
+          animate={{opacity: 1, x: 0}}
+          exit={{opacity: 0, x: "-30vw"}}
         >
           <Result
             icon={<LayoutTwoTone />}
@@ -192,9 +192,9 @@ export default class Process extends Component {
         <div>
           <motion.div
             key={"Seven"}
-            initial={{ opacity: 0, x: "-50vw" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "50vw" }}
+            initial={{opacity: 0, x: "50vh"}}
+            animate={{opacity: 1, x: 0}}
+            exit={{opacity: 0, x: "-30vw"}}
           >
             <Result
               icon={<ThunderboltTwoTone />}
@@ -216,9 +216,9 @@ export default class Process extends Component {
       content: (
         <motion.div
           key={"Eight"}
-          initial={{ opacity: 0, x: "-50vw" }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: "50vw" }}
+          initial={{opacity: 0, x: "50vh"}}
+          animate={{opacity: 1, x: 0}}
+          exit={{opacity: 0, x: "-30vw"}}
         >
           <div style={{ textAlign: "center" }}>
             <Result
@@ -236,9 +236,9 @@ export default class Process extends Component {
       content: (
         <motion.div
           key={"Nine"}
-          initial={{ opacity: 0, x: "-50vw" }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: "50vw" }}
+          initial={{opacity: 0, x: "50vh"}}
+          animate={{opacity: 1, x: 0}}
+          exit={{opacity: 0, x: "-30vw"}}
         >
           <div style={{ textAlign: "center" }}>
             <Result
