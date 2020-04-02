@@ -20,6 +20,12 @@ const { Step } = Steps;
 
 const answers = [3, 2, 3, 1, 2, 3, 1];
 
+const variants = {
+  initial: { opacity: 0, x: "-50vw" },
+  enter: { opacity: 1, x: 0 },
+  exit: { opacity: 1, x: "50vw" },
+};
+
 const Q1 = {
   question: {
     label: "React creates a virtual DOM",
@@ -51,202 +57,220 @@ export default class Process extends Component {
     {
       title: "1st",
       content: (
-        <motion.div
-          key={"One"}
-          initial={{ opacity: 0, x: "50vh" }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: "-30vw" }}
-        >
-          <Result
-            icon={<ApiTwoTone />}
-            title="Q1. How React works?"
-            subTitle="more descriptions go here"
-            extra={[
-              <Checkbox.Group
-                onChange={(values) => this.onChange(values, 1)}
-                options={Object.values(Q1)}
-              />,
-            ]}
-          />
-        </motion.div>
+        <AnimatePresence exitBeforeEnter>
+          <motion.div
+            key={"One"}
+            initial={{ opacity: 0, x: "50vh" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "-50vw" }}
+          >
+            <Result
+              icon={<ApiTwoTone />}
+              title="Q1. How React works?"
+              subTitle="more descriptions go here"
+              extra={[
+                <Checkbox.Group
+                  onChange={(values) => this.onChange(values, 1)}
+                  options={Object.values(Q1)}
+                />,
+              ]}
+            />
+          </motion.div>
+        </AnimatePresence>
       ),
     },
     {
       title: "2nd",
       content: (
-        <motion.div
-          key={"Two"}
-          initial={{opacity: 0, x: "50vh"}}
-          animate={{opacity: 1, x: 0}}
-          exit={{opacity: 0, x: "-30vw"}}
-        >
-          <Result
-            icon={<ExperimentTwoTone />}
-            title="Q2. What is JSX?"
-            subTitle="more descriptions go here"
-            extra={[
-              <Checkbox.Group
-                onChange={(values) => this.onChange(values, 2)}
-                options={Object.values(Q2)}
-              />,
-            ]}
-          />
-        </motion.div>
+        <AnimatePresence exitBeforeEnter>
+          <motion.div
+            key={"Two"}
+            initial={{ opacity: 0, x: "50vh" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "-50vw" }}
+          >
+            <Result
+              icon={<ExperimentTwoTone />}
+              title="Q2. What is JSX?"
+              subTitle="more descriptions go here"
+              extra={[
+                <Checkbox.Group
+                  onChange={(values) => this.onChange(values, 2)}
+                  options={Object.values(Q2)}
+                />,
+              ]}
+            />
+          </motion.div>
+        </AnimatePresence>
       ),
     },
     {
       title: "3rd",
       content: (
-        <motion.div
-          key={"Three"}
-          initial={{opacity: 0, x: "50vh"}}
-          animate={{opacity: 1, x: 0}}
-          exit={{opacity: 0, x: "-30vw"}}
-        >
-          <Result
-            icon={<BuildTwoTone />}
-            title="Q3. What is React.createClass?"
-            subTitle="more descriptions go here"
-            extra={[
-              <Checkbox.Group
-                onChange={(values) => this.onChange(values, 3)}
-                options={Object.values(Q2)}
-              />,
-            ]}
-          />
-        </motion.div>
+        <AnimatePresence exitBeforeEnter>
+          <motion.div
+            key={"Three"}
+            initial={{ opacity: 0, x: "50vh" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "-50vw" }}
+          >
+            <Result
+              icon={<BuildTwoTone />}
+              title="Q3. What is React.createClass?"
+              subTitle="more descriptions go here"
+              extra={[
+                <Checkbox.Group
+                  onChange={(values) => this.onChange(values, 3)}
+                  options={Object.values(Q2)}
+                />,
+              ]}
+            />
+          </motion.div>
+        </AnimatePresence>
       ),
     },
     {
       title: "4th",
       content: (
-        <motion.div
-          key={"Four"}
-          initial={{opacity: 0, x: "50vh"}}
-          animate={{opacity: 1, x: 0}}
-          exit={{opacity: 0, x: "-30vw"}}
-        >
-          <Result
-            icon={<SettingTwoTone />}
-            title="Q4. What is ReactDOM?"
-            subTitle="more descriptions go here"
-            extra={[
-              <Checkbox.Group
-                onChange={(values) => this.onChange(values, 4)}
-                options={Object.values(Q2)}
-              />,
-            ]}
-          />
-        </motion.div>
+        <AnimatePresence exitBeforeEnter>
+          <motion.div
+            key={"Four"}
+            initial={{ opacity: 0, x: "50vh" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "-50vw" }}
+          >
+            <Result
+              icon={<SettingTwoTone />}
+              title="Q4. What is ReactDOM?"
+              subTitle="more descriptions go here"
+              extra={[
+                <Checkbox.Group
+                  onChange={(values) => this.onChange(values, 4)}
+                  options={Object.values(Q2)}
+                />,
+              ]}
+            />
+          </motion.div>
+        </AnimatePresence>
       ),
     },
     {
       title: "5th",
       content: (
-        <motion.div
-          key={"Five"}
-          initial={{opacity: 0, x: "50vh"}}
-          animate={{opacity: 1, x: 0}}
-          exit={{opacity: 0, x: "-30vw"}}
-        >
-          <Result
-            icon={<ProfileTwoTone />}
-            title="Q5. What is a higher order component?"
-            subTitle="more descriptions go here"
-            extra={[
-              <Checkbox.Group
-                onChange={(values) => this.onChange(values, 5)}
-                options={Object.values(Q2)}
-              />,
-            ]}
-          />
-        </motion.div>
+        <AnimatePresence exitBeforeEnter>
+          <motion.div
+            key={"Five"}
+            initial={{ opacity: 0, x: "50vh" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "-50vw" }}
+          >
+            <Result
+              icon={<ProfileTwoTone />}
+              title="Q5. What is a higher order component?"
+              subTitle="more descriptions go here"
+              extra={[
+                <Checkbox.Group
+                  onChange={(values) => this.onChange(values, 5)}
+                  options={Object.values(Q2)}
+                />,
+              ]}
+            />
+          </motion.div>
+        </AnimatePresence>
       ),
     },
     {
       title: "6th",
       content: (
-        <motion.div
-          key={"Six"}
-          initial={{opacity: 0, x: "50vh"}}
-          animate={{opacity: 1, x: 0}}
-          exit={{opacity: 0, x: "-30vw"}}
-        >
-          <Result
-            icon={<LayoutTwoTone />}
-            title="Q6. What is the difference between state and props?"
-            subTitle="more descriptions go here"
-            extra={[
-              <Checkbox.Group
-                onChange={(values) => this.onChange(values, 6)}
-                options={Object.values(Q2)}
-              />,
-            ]}
-          />
-        </motion.div>
+        <AnimatePresence exitBeforeEnter>
+          <motion.div
+            key={"Six"}
+            initial={{ opacity: 0, x: "50vh" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "-50vw" }}
+          >
+            <Result
+              icon={<LayoutTwoTone />}
+              title="Q6. What is the difference between state and props?"
+              subTitle="more descriptions go here"
+              extra={[
+                <Checkbox.Group
+                  onChange={(values) => this.onChange(values, 6)}
+                  options={Object.values(Q2)}
+                />,
+              ]}
+            />
+          </motion.div>
+        </AnimatePresence>
       ),
     },
     {
       title: "7th",
       content: (
         <div>
-          <motion.div
-            key={"Seven"}
-            initial={{opacity: 0, x: "50vh"}}
-            animate={{opacity: 1, x: 0}}
-            exit={{opacity: 0, x: "-30vw"}}
-          >
-            <Result
-              icon={<ThunderboltTwoTone />}
-              title="Q7. What are controlled components?"
-              subTitle="more descriptions go here"
-              extra={[
-                <Checkbox.Group
-                  onChange={(values) => this.onChange(values, 7)}
-                  options={Object.values(Q2)}
-                />,
-              ]}
-            />
-          </motion.div>
+          <AnimatePresence exitBeforeEnter>
+            <motion.div
+              key={"Seven"}
+              initial={{ opacity: 0, x: "50vh" }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: "-50vw" }}
+            >
+              <Result
+                icon={<ThunderboltTwoTone />}
+                title="Q7. What are controlled components?"
+                subTitle="more descriptions go here"
+                extra={[
+                  <Checkbox.Group
+                    onChange={(values) => this.onChange(values, 7)}
+                    options={Object.values(Q2)}
+                  />,
+                ]}
+              />
+            </motion.div>
+          </AnimatePresence>
         </div>
       ),
     },
     {
       title: "8th",
       content: (
-        <motion.div
-          key={"Eight"}
-          initial={{opacity: 0, x: "50vh"}}
-          animate={{opacity: 1, x: 0}}
-          exit={{opacity: 0, x: "-30vw"}}
-        >
-          <div style={{ textAlign: "center" }}>
-            <Result
-              status="success"
-              title="Successfully Completed Short Quiz"
-              subTitle="User stats: takes 1-5 minutes, please wait."
-              extra={[]}
-            />
-          </div>
-        </motion.div>
+        <AnimatePresence exitBeforeEnter>
+          <motion.div
+            key={"Eight"}
+            initial={{ opacity: 0, x: "50vh" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "-50vw" }}
+          >
+            <div style={{ textAlign: "center" }}>
+              <Result
+                status="success"
+                title="Successfully Completed Short Quiz"
+                subTitle="User stats: takes 1-5 minutes, please wait."
+                extra={[]}
+              />
+            </div>
+          </motion.div>
+        </AnimatePresence>
       ),
     },
     {
       title: null,
       content: (
-        <motion.div
-          key={"Nine"}
-          initial={{opacity: 0, x: "50vh"}}
-          animate={{opacity: 1, x: 0}}
-          exit={{opacity: 0, x: "-30vw"}}
-        >
-          <div style={{ textAlign: "center" }}>
-            <Result
-              icon={<CrownTwoTone style={{ fontSize: 40 }} />}
-              extra={[<Data userData={this.props.newData} />]}
-            />
-          </div>
-        </motion.div>
+        <AnimatePresence exitBeforeEnter>
+          <motion.div
+            key={"Nine"}
+            initial={{ opacity: 0, x: "50vh" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "-50vw" }}
+          >
+            <div style={{ textAlign: "center" }}>
+              <Result
+                icon={<CrownTwoTone style={{ fontSize: 40 }} />}
+                extra={[<Data userData={this.props.newData} />]}
+              />
+            </div>
+          </motion.div>
+        </AnimatePresence>
       ),
     },
   ];
@@ -275,7 +299,6 @@ export default class Process extends Component {
       console.log("correct answer");
       message.success("correct!");
       this.props.addCorrect();
-      this.next();
     } else if (Object.values(checkedValues).length !== 0 || undefined) {
       console.log(
         "selected : ",
@@ -285,8 +308,8 @@ export default class Process extends Component {
       );
       message.warn("wrong!");
       this.props.addWrong();
-      this.next();
     }
+    this.next();
   }
 
   /**
@@ -350,10 +373,8 @@ export default class Process extends Component {
           ))}
         </Steps>
 
-        <AnimatePresence exitBeforeEnter>
-          <div className="steps-content">{this.process[current].content}</div>
-          <div id={"chart"} />
-        </AnimatePresence>
+        <div className="steps-content">{this.process[current].content}</div>
+        <div id={"chart"} />
 
         <div className={"steps-action"}>
           {current < this.process.length - 1 && (
@@ -370,10 +391,11 @@ export default class Process extends Component {
           )}
           {current === this.process.length - 1 && (
             <motion.div
+              variants={variants}
               style={{ display: "table-cell" }}
-              initial={{ opacity: 0, x: "-50vw" }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: "50vw" }}
+              initial={"initial"}
+              animate={"enter"}
+              exit={"exit"}
             >
               <Button
                 type="primary"
