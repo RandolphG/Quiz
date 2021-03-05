@@ -1,7 +1,7 @@
 # React Quiz w/Material Design
 
 
-![Quiz](https://github.com/RandolphG/project-ui/blob/master/public/_muzik.gif?raw=true)
+![Quiz](https://github.com/RandolphG/project-ui/blob/master/public/_quiz.gif?raw=true)
 
 
 ## quiz w/material design
